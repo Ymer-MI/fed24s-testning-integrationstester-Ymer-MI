@@ -13,12 +13,9 @@ export const init = () => {
 }
 
 export async function handleSubmit() {
-	let searchText = (document.getElementById('searchText') as HTMLInputElement)
-		.value
+	let searchText = (document.getElementById('searchText') as HTMLInputElement).value
 
-	let container: HTMLDivElement = document.getElementById(
-		'movie-container'
-  ) as HTMLDivElement
+	let container: HTMLDivElement = document.getElementById('movie-container') as HTMLDivElement
 	container.innerHTML = ''
 
 	try {
