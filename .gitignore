@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 # User definded directories and files
+coverage
 .env
 package-lock.json

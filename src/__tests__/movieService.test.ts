@@ -1,1 +1,5 @@
-describe('Testing movie service', () => {})
+describe('Testing movie service', () => {
+    test('should work correctly', () => {
+       
+    })
+})
