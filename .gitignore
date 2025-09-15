@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# User definded directories and files
+.env
+packege-lock.json
