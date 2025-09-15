@@ -25,4 +25,4 @@ dist-ssr
 
 # User definded directories and files
 .env
-packege-lock.json
+package-lock.json
