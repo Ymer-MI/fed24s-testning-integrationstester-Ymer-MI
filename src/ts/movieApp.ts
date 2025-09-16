@@ -9,6 +9,8 @@ export const init = () => {
 	form.addEventListener('submit', (e: SubmitEvent) => {
 		e.preventDefault()
 		handleSubmit()
+		console.log('submitted');
+		
 	})
 }
 

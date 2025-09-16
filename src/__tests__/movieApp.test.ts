@@ -1,4 +1,3 @@
-// import * as movieApp from '../ts/movieApp'
 import * as HTMLFunctions from '../ts/HTMLFunctions'
 import { testMoviesData } from '../ts/services/__mocks__/movieService'
 import { handleSubmit, init } from '../ts/movieApp'
@@ -14,7 +13,6 @@ jest.mock('../ts/services/movieService')
 
 describe('testing movie app functions', () => {
     const mockedCreateHtml = jest.spyOn(HTMLFunctions, 'createHtml'), mockedDisplayNoResult = jest.spyOn(HTMLFunctions, 'displayNoResult')
-    // const mockedHandleSubmit = jest.spyOn(movieApp, 'handleSubmit')
 
     beforeEach(() => {
         document.body.innerHTML = `
@@ -28,13 +26,14 @@ describe('testing movie app functions', () => {
     })
 
     test('should find the form and add an event listener', () => {
-        const form = document.getElementById(ID.SEARCH_FORM) as HTMLFormElement, mockedAddEventListener = jest.spyOn(form, 'addEventListener')
+        const form = document.getElementById(ID.SEARCH_FORM) as HTMLFormElement, mockedAddEventListener = jest.spyOn(form, 'addEventListener'),
+        mockedConsoleLog = jest.spyOn(console, 'log')
 
         init();
-        // (document.getElementById(ID.SEARCH_BUTTON) as HTMLButtonElement).click()
+        (document.getElementById(ID.SEARCH_BUTTON) as HTMLButtonElement).click()
         
         expect(mockedAddEventListener).toHaveBeenCalledTimes(1)
-        // expect(mockedHandleSubmit).toHaveBeenCalledTimes(1)
+        expect(mockedConsoleLog).toHaveBeenCalledWith('submitted')
     })
 
     test('should find the value, search with it and call createHtml with correct data', async () => {
